@@ -17,3 +17,10 @@ pip install flask-login
 python3 -m venv venv
 source venv/bin/activate # Unix
 venv\Scripts\activate # Windows
+```
+
+# Database
+```
+flask db migrate -m "comment"
+flask db upgrade
+```
