@@ -24,3 +24,8 @@ venv\Scripts\activate # Windows
 flask db migrate -m "comment"
 flask db upgrade
 ```
+
+# Testing
+```
+python tests.py
+```
