@@ -10,6 +10,8 @@ pip install flask-wtf
 pip install flask-sqlalchemy
 pip install flask-migrate
 pip install flask-login
+pip install flask-mail
+pip install pyjwt
 ```
 
 # Virtual env
@@ -23,6 +25,11 @@ venv\Scripts\activate # Windows
 ```
 flask db migrate -m "comment"
 flask db upgrade
+```
+
+# Email server
+```
+python -m smtpd -n -c DebuggingServer localhost:8025
 ```
 
 # Testing
