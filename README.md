@@ -14,7 +14,7 @@ pip install flask-login
 
 # Virtual env
 ```
-python3 -m venv venv
+python -m venv venv
 source venv/bin/activate # Unix
 venv\Scripts\activate # Windows
 ```
