@@ -1,6 +1,13 @@
 # Microblog
 Flask mega tutorial: https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
 
+# Virtual env
+```
+python -m venv venv
+source venv/bin/activate # Unix
+venv\Scripts\activate # Windows
+```
+
 # Python packages
 ```
 python -m pip install --upgrade pip
@@ -12,18 +19,13 @@ pip install flask-migrate
 pip install flask-login
 pip install flask-mail
 pip install pyjwt
+pip install flask-moment
+pip freeze > requirements.txt
 ```
 
 # Bootstrap package (optional)
 ```
 pip install flask-bootstrap
-```
-
-# Virtual env
-```
-python -m venv venv
-source venv/bin/activate # Unix
-venv\Scripts\activate # Windows
 ```
 
 # Database
