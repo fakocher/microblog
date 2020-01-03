@@ -14,6 +14,11 @@ pip install flask-mail
 pip install pyjwt
 ```
 
+# Bootstrap package (optional)
+```
+pip install flask-bootstrap
+```
+
 # Virtual env
 ```
 python -m venv venv

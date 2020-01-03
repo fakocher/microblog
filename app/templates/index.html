@@ -1,18 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hi, {{ current_user.username }}!</h1>
+    <h1 class="title is-1">Hi, {{ current_user.username }}!</h1>
     {% if form %}
     <form action="" method="post">
         {{ form.hidden_tag() }}
-        <p>
-            {{ form.post.label }}<br>
-            {{ form.post(cols=32, rows=4) }}<br>
+        <div class="field">
+            {{ form.post.label(class='label') }}
+            <div class="control">
+                {{ form.post(cols=32, rows=4, class='textarea') }}
+            </div>
             {% for error in form.post.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
-        </p>
-        <p>{{ form.submit() }}</p>
+        </div>
+        <div class="field">
+            <div class="control">
+                {{ form.submit(class='button is-link') }}
+            </div>
+        </div>
     </form>
     {% endif %}
     {% for post in posts %}
