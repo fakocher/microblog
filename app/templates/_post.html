@@ -11,6 +11,7 @@
             </a>
         </p>
         <p class="subtitle is-6">
+            said {{ moment(post.timestamp).fromNow() }}:<br>
             "{{ post.body }}"
         </p>
     </div>
