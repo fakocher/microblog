@@ -21,11 +21,7 @@ pip install flask-mail
 pip install pyjwt
 pip install flask-moment
 pip freeze > requirements.txt
-```
-
-# Bootstrap package (optional)
-```
-pip install flask-bootstrap
+pip install -r requirements.txt
 ```
 
 # Database
@@ -39,7 +35,19 @@ flask db upgrade
 python -m smtpd -n -c DebuggingServer localhost:8025
 ```
 
+# .env example
+```
+SECRET_KEY=a-really-long-and-unique-key-that-nobody-knows
+MAIL_SERVER=localhost
+MAIL_PORT=8025
+```
+
 # Testing
 ```
 python tests.py
+```
+
+# Bootstrap package (optional)
+```
+pip install flask-bootstrap
 ```
