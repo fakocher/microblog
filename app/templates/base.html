@@ -15,18 +15,18 @@
         <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
             <div class="container">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="{{ url_for('index') }}">MICROBLOG</a>
+                    <a class="navbar-item" href="{{ url_for('main.index') }}">MICROBLOG</a>
                 </div>
                 <div class="navbar-menu">
                     <div class="navbar-start">
-                        <a class="navbar-item" href="{{ url_for('index') }}">Home</a>
-                        <a class="navbar-item" href="{{ url_for('explore') }}">Explore</a>
+                        <a class="navbar-item" href="{{ url_for('main.index') }}">Home</a>
+                        <a class="navbar-item" href="{{ url_for('main.explore') }}">Explore</a>
                     </div>
                     <div class="navbar-end">
                         {% if current_user.is_anonymous %}
                             <a class="navbar-item" href="{{ url_for('auth.login') }}">Login</a>
                         {% else %}
-                            <a class="navbar-item" href="{{ url_for('user', username=current_user.username) }}">Profile</a>
+                            <a class="navbar-item" href="{{ url_for('main.user', username=current_user.username) }}">Profile</a>
                             <a class="navbar-item" href="{{ url_for('auth.logout') }}">Logout</a>
                         {% endif %}
                     </div>              
