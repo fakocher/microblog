@@ -1,5 +1,5 @@
 from flask import render_template, flash, redirect, url_for, request, \
-    current_app
+    current_app, jsonify
 from flask_login import current_user, login_required
 from app import db
 from app.main import bp
@@ -12,6 +12,11 @@ def before_request():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
         db.session.commit()
+
+# sanity check route
+@bp.route('/ping', methods=['GET'])
+def ping_pong():
+    return jsonify('pong!')
 
 @bp.route('/', methods=['GET', 'POST'])
 @bp.route('/index', methods=['GET', 'POST'])

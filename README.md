@@ -20,6 +20,7 @@ pip install flask-login
 pip install flask-mail
 pip install pyjwt
 pip install flask-moment
+pip install flask-cors
 pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
