@@ -36,6 +36,13 @@ flask db upgrade
 python -m smtpd -n -c DebuggingServer localhost:8025
 ```
 
+# .flaskenv example
+```
+FLASK_APP=microblog.py
+FLASK_ENV=development
+FLASK_DEBUG=1
+```
+
 # .env example
 ```
 SECRET_KEY=a-really-long-and-unique-key-that-nobody-knows

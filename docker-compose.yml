@@ -1,0 +1,8 @@
+version: '3'
+services:
+  flask:
+    build: .
+    ports:
+      - '8000:5000'
+  # mysql:
+    # image: 'mysql'
