@@ -2,14 +2,20 @@ version: '3'
 services:
   flask:
     build: .
-    # restart: always
+    restart: always
     ports:
       - '8000:5000'
-    # environment:
-      # - DATABASE_URL=mysql
-  # mysql:
-    # image: 'mysql'
-    # restart: always
-    # environment:
-      # - MYSQL_ROOT_PASSWORD
+    environment:
+      - DATABASE_URL=mysql
+  mysql:
+    image: 'mysql'
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 1234:8080
       
