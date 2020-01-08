@@ -3,16 +3,21 @@ services:
   flask:
     build: .
     restart: always
+    links:
+      - 'mysql:dbserver'
     ports:
       - '8000:5000'
     environment:
-      - DATABASE_URL=mysql
+      - DATABASE_URL=mysql+pymysql://microblog:12345678@dbserver/microblog
   mysql:
-    image: 'mysql'
+    image: mysql:8
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - MYSQL_DATABASE=microblog
+      - MYSQL_USER=microblog
+      - MYSQL_PASSWORD=12345678
   adminer:
     image: adminer
     restart: always
